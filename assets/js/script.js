@@ -8,4 +8,15 @@ for (var i = 9; i < 18; i++) {
     } else {
         $("#hour" + i).addClass("future")
     }
+    var local = localStorage.getItem("hour" + i)
+    if (local !== null){
+        console.log(local)
+        $("#hour" + i).text(local)
+    }
 }
+
+$(".saveBtn").on( "click" , function(){
+    var buttonVal = $(this).val()
+    var textAreaVal = $("#hour"+buttonVal).val()
+    localStorage.setItem("hour" + buttonVal, textAreaVal)
+})
