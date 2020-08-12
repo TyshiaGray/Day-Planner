@@ -1,5 +1,6 @@
 var currentHour = moment().format('H');
 console.log(currentHour)
+// for loop that goes through each hour
 for (var i = 9; i < 18; i++) {
     if (i < currentHour) {
         $("#hour" + i).addClass("past")
@@ -20,3 +21,4 @@ $(".saveBtn").on( "click" , function(){
     var textAreaVal = $("#hour"+buttonVal).val()
     localStorage.setItem("hour" + buttonVal, textAreaVal)
 })
+$("#currentDay").text(moment().format('MMMM Do YYYY'))
